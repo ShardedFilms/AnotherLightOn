@@ -105,7 +105,7 @@ public class Stage1 extends SpecialState{
         }
 
         //if(time4 > (2f * 60)){
-        if(time4 > (10f * 60)){
+        if(time4 > (30f * 60)){
             if(ball2s.isEmpty()){
                 FlameSounds.screams.play(10f, 0.5f, 0f);
                 for(int i = 0; i < 10; i++){
@@ -123,6 +123,8 @@ public class Stage1 extends SpecialState{
     static void updateSilence(){
         if(!state.isMenu() && state.isPaused()){
             state.set(State.playing);
+            SpecialMain.increment(false);
+            Core.app.exit();
         }
 
         if(!silence && Vars.control.sound != null){
