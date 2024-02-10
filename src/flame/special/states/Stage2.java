@@ -76,7 +76,7 @@ public class Stage2 extends SpecialState{
         updateSilence();
         if(killed && killTime <= 0f){
             crashTime += FlameOutSFX.timeDelta;
-            if(crashTime >= 5f * 60){
+            if(crashTime >= 10f * 60){
                 //SpecialMain.increment(false);
                 Core.app.exit();
                 return;
@@ -286,9 +286,9 @@ public class Stage2 extends SpecialState{
 
         if(placeTime > 60f && !killed){
             //StringBuilder text = new StringBuilder("Summon a unit.");
-            String text = "Summon a unit";
+            String text = "Sacrifice...";
 
-            if(placeTime < 90f){
+            if(placeTime < 180f){
                 int len = text.length();
                 text = "";
                 //text = new StringBuilder();
