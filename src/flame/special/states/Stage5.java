@@ -146,16 +146,16 @@ public class Stage5 extends SpecialState{
         float time = (frames - timeOffset) / 10f;
         
         float scl2 = 0.3f;
-        for(int i = 0; i < 14; i++){
+        for(int i = 0; i < 28; i++){
             Draw.rect(lamp, (i * lamp.width * 2.5f - time) * scl2, (lamp.height / 2f) * scl2 + 60f, lamp.width * scl2, lamp.height * scl2);
         }
 
         float scl1 = 0.6f;
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < 14; i++){
             Draw.rect(lamp, (i * lamp.width * 2.5f - time) * scl1, (lamp.height / 2f) * scl1 + 30f, lamp.width * scl1, lamp.height * scl1);
         }
         
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 8; i++){
             Draw.rect(lamp, i * lamp.width * 2.5f - time, lamp.height / 2f, lamp.width, lamp.height);
         }
     }
