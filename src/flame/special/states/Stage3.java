@@ -79,7 +79,7 @@ public class Stage3 extends SpecialState{
                         }
                     }
                 }
-                interval = 5f;
+                interval = 1f;
             }
         }else if(hadPlayed && diag == null){
             SpecialMain.increment(false);
