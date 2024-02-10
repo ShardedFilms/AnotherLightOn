@@ -108,7 +108,7 @@ public class Stage1 extends SpecialState{
         if(time4 > (10f * 60)){
             if(ball2s.isEmpty()){
                 FlameSounds.screams.play(10f, 0.5f, 0f);
-                for(int i = 0; i < 100; i++){
+                for(int i = 0; i < 10; i++){
                     ball2s.add(new Ball2());
                 }
             }
@@ -327,7 +327,7 @@ public class Stage1 extends SpecialState{
             time += Time.delta;
             Unit unit = player.unit();
             if(unit != null && !unit.isNull()){
-                Tmp.v1.set(unit.x, unit.y).sub(x, y).limit(25f * Mathf.clamp(time / 40f));
+                Tmp.v1.set(unit.x, unit.y).sub(x, y).limit(50f * Mathf.clamp(time / 80f));
                 x += Tmp.v1.x;
                 y += Tmp.v1.y;
 
