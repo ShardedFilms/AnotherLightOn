@@ -102,7 +102,7 @@ public class SpecialContent{
             @Override
             public void load(){
                 super.load();
-                fullIcon = uiIcon = Core.atlas.find("clear-effect");
+                fullIcon = uiIcon = Core.atlas.find("flameout-azathoth");
             }
 
             @Override
