@@ -65,7 +65,7 @@ public class Stage4 extends SpecialState{
         rules.lighting = true;
         rules.ambientLight.set(Color.black);
 
-        UnitTypes.alpha.lightRadius *= 8f;
+        UnitTypes.alpha.lightRadius *= 32f;
 
         state.rules = rules;
 
@@ -108,7 +108,7 @@ public class Stage4 extends SpecialState{
 
     static class A{
         float x, y;
-        float speed = UnitTypes.alpha.speed / 4f;
+        float speed = UnitTypes.alpha.speed / 8f;
 
         void update(){
             speed += (1f / (60f * 60f)) * FlameOutSFX.timeDelta;
