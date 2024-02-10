@@ -15,6 +15,7 @@ import flame.special.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.gen.*;
+import mindustry.ui.dialogs.*;
 
 import static mindustry.Vars.*;
 import static arc.Core.*;
@@ -61,6 +62,11 @@ public class Stage5 extends SpecialState{
         }
         if(ended && !disposed){
             dispose();
+                            BaseDialog dialog = new BaseDialog("Flame Special");
+                dialog.cont.add("Congradulations.").row();
+                //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
+                dialog.cont.button("OK", dialog::hide).size(100f, 50f);
+                dialog.show();
         }
     }
 
