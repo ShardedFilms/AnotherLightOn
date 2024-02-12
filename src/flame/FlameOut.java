@@ -9,7 +9,6 @@ import flame.bullets.*;
 import flame.effects.*;
 import flame.entities.*;
 import flame.graphics.*;
-import flame.special.*;
 import flame.unit.*;
 import flame.unit.empathy.*;
 import mindustry.*;
@@ -24,7 +23,7 @@ public class FlameOut extends Mod{
     public static VaporizeBatch vaporBatch;
     public static DevastationBatch devasBatch;
 
-    public final boolean test = false;
+    public final boolean test = true;
 
     public FlameOut(){
         ApathyAoEBulletType.loadStatic();
@@ -43,13 +42,9 @@ public class FlameOut extends Mod{
                 devasBatch = new DevastationBatch();
                 //fragBatch.load();
                 FlameOutSFX.inst.loadHeadless();
-                SpecialMain.load();
                 //SpecialDeathEffects.load();
             }
         }));
-        Events.on(ClientLoadEvent.class, e -> {
-            SpecialMain.loadClient();
-        });
         Events.on(WorldLoadEvent.class, e -> EmpathyDamage.worldLoad());
         if(test){
             Events.run(Trigger.update, () -> {
@@ -90,7 +85,6 @@ public class FlameOut extends Mod{
         SpecialDeathEffects.load();
         FlameBullets.load();
         FlameUnitTypes.load();
-        SpecialContent.load();
     }
 
 }
