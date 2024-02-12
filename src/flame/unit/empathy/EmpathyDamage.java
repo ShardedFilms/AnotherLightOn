@@ -7,6 +7,7 @@ import arc.struct.*;
 import arc.util.*;
 import arc.util.pooling.*;
 import flame.effects.*;
+import flame.special.*;
 import flame.unit.*;
 import mindustry.*;
 import mindustry.audio.*;
@@ -85,6 +86,7 @@ public class EmpathyDamage{
     }
 
     public static void exclude(Unit unit){
+        if(!SpecialMain.validEmpathySpawn()) return;
         if(exclude.add(unit.id)){
             excludeSeq.add(unit);
         }
@@ -118,7 +120,7 @@ public class EmpathyDamage{
     }
 
     public static void spawnEmpathy(float x, float y){
-       {
+        if(spawner == null && SpecialMain.validEmpathySpawn()){
             EmpathySpawner s = new EmpathySpawner();
             s.x = x;
             s.y = y;
