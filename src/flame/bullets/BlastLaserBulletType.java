@@ -38,6 +38,9 @@ public class BlastLaserBulletType extends BulletType{
     public float damageEmpathy= 10;
     public boolean trueDamage = false;
 
+    public boolean shockwave = false;
+    public boolean flash = false;
+
     public BlastLaserBulletType(){
         speed = 0f;
         collides = collidesTiles = false;
@@ -228,14 +231,15 @@ public class BlastLaserBulletType extends BulletType{
         }
         if(b.fdata < 1 && b.time > scaleDelay){
             b.fdata = 2;
-            
+            if(shockwave){
             Tmp.v1.trns(b.rotation(), 70f).add(b.x, b.y);
             FlameFX.shootShockWave.at(Tmp.v1.x, Tmp.v1.y, b.rotation(), 200f);
             Tmp.v1.trns(b.rotation(), 180f).add(b.x, b.y);
             FlameFX.shootShockWave.at(Tmp.v1.x, Tmp.v1.y, b.rotation(), 350f);
-
+            };
+            if(flash){
             FlameOutSFX.inst.impactFrames(b, b.x, b.y, b.rotation(), 23f, true);
-            Vars.renderer.shake(80f, 90f);
+            Vars.renderer.shake(80f, 90f);};
         }
     }
 
