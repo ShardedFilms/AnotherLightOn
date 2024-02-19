@@ -83,9 +83,9 @@ public class EndMissileBulletType extends BasicBulletType{
         Utils.scanEnemies(b.team, x, y, 40f, true, true, t -> {
             float dam = Mathf.chance(0.333f) ? 1000f : 200f;
             if(t instanceof Unit u){
-                EmpathyDamage.damageUnit(u, dam + u.maxHealth / 110f, true, () -> SpecialDeathEffects.get(u.type).deathUnit(u, x, y, Angles.angle(x, y, u.x, u.y)));
+                EmpathyDamage.damageUnit(u, dam + u.maxHealth / 11000f, true, () -> SpecialDeathEffects.get(u.type).deathUnit(u, x, y, Angles.angle(x, y, u.x, u.y)));
             }else if(t instanceof Building bl){
-                EmpathyDamage.damageBuilding(bl, dam + bl.maxHealth / 110f, true, () -> SpecialDeathEffects.get(bl.block).deathBuilding(bl, x, y, Angles.angle(x, y, bl.x, bl.y)));
+                EmpathyDamage.damageBuilding(bl, dam + bl.maxHealth / 11000f, true, () -> SpecialDeathEffects.get(bl.block).deathBuilding(bl, x, y, Angles.angle(x, y, bl.x, bl.y)));
             }
         });
     }
