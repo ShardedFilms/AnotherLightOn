@@ -15,13 +15,13 @@ public class EmpathyUnitType extends UnitType{
         hitSize = 7;
         drag = 0.07f;
 
-        health = 100f;
+        health = 1f;
 
         outlines = false;
         drawCell = false;
 
         createScorch = false;
-        hidden = true;
+        hidden = false;
 
         engineSize = -1f;
 
