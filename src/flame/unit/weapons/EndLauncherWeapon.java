@@ -30,7 +30,7 @@ public class EndLauncherWeapon extends Weapon{
         shootWarmupSpeed = 0.025f;
         shootCone = 360f;
         minWarmup = 0.99f;
-        reload = 60f * 2.5f;
+        reload = 60f ;
 
         //shootSound = Sounds.missileSmall;
         shootSound = Sounds.missile;
@@ -60,7 +60,7 @@ public class EndLauncherWeapon extends Weapon{
 
         if(mount.shoot && lm.burstCount <= 0 && can && mount.warmup > minWarmup && mount.reload <= 0.0001f){
             mount.reload = reload;
-            lm.burstCount = 8 * 6;
+            lm.burstCount = 8 * 10;
             lm.burstTime = 0f;
         }
 
