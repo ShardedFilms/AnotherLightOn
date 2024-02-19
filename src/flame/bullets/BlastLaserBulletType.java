@@ -34,6 +34,7 @@ public class BlastLaserBulletType extends BulletType{
     public TextureRegion hcircle;
 
     public float scaleDelay = 140;
+    public float diamondDelay = 140;
 
     public float damageEmpathy= 10;
     public boolean trueDamage = false;
@@ -194,7 +195,7 @@ public class BlastLaserBulletType extends BulletType{
                             float lw = getLaserWidth(dst) * dw * 0.5f;
                             if(bl.dst(nearest) <= lw + bl.hitSize() / 2f){
                                 hit(b, x, y);
-                                if(b.time > 140f) FlameFX.bigLaserHit.at(x, y, b.rotation(), bl.hitSize());
+                                if(b.time > scaleDelay) FlameFX.bigLaserHit.at(x, y, b.rotation(), bl.hitSize());
                                 handleDamage(bl, b);
                             }
                         });
@@ -259,7 +260,7 @@ public class BlastLaserBulletType extends BulletType{
             Drawf.tri(v2.x, v2.y, Lines.getStroke(), width * 2 + dw, b.rotation());
         }
         if(b.time > scaleDelay){
-            float scl = Interp.pow2Out.apply(Mathf.clamp((b.time - 140f) / 5)) * Interp.pow3In.apply(Mathf.clamp((lifetime - b.time) / 80f));
+            float scl = Interp.pow2Out.apply(Mathf.clamp((b.time - diamondDelay) / 5)) * Interp.pow3In.apply(Mathf.clamp((lifetime - b.time) / 80f));
             Rand r = Utils.rand, r2 = Utils.rand2;
             r.setSeed(b.id + 1236);
 
