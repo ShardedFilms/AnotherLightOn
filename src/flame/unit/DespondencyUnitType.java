@@ -122,7 +122,7 @@ public class DespondencyUnitType extends UnitType{
                     bullet = new EndRailBulletType();
                 }},
 
-                /*
+                
                 new EndFlameThrowerWeapon(this.name + "-flamethrower"){{
                     //x = 47.75f;
                     //y = 8f;
@@ -141,14 +141,17 @@ public class DespondencyUnitType extends UnitType{
                     rotateSpeed = 1f;
                     rotate = true;
 
+                    shootSound = Sounds.flame;
+
                     shootCone = 80f;
                     inaccuracy = 4f;
-                    reload = 3f;
+                    reload = 9f;
                     xRand = 4f;
-                    shoot.shots = 3;
+                    shoot.shots = 9;
+                    shoot.shotDelay=1;
 
                     bullet = new EndFlameBulletType();
-                }},*/
+                }},
 
                 new Weapon(this.name + "-cannon"){{
                     x = 56f;
