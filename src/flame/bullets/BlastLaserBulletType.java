@@ -33,7 +33,7 @@ public class BlastLaserBulletType extends BulletType{
 
     public TextureRegion hcircle;
 
-    public float ScaleDelay = 140;
+    public float scaleDelay = 140;
 
     public float damageEmpathy= 10;
     public boolean trueDamage = false;
@@ -100,7 +100,7 @@ public class BlastLaserBulletType extends BulletType{
             if(trueDamage){
             EmpathyDamage.damageUnit(u, damageEmpathy + u.maxHealth / 40f, true, null);
             };
-            if(b.time < scaleDelayf){
+            if(b.time < scaleDelay){
                 /*
                 float adst = Math.min(Angles.angleDist(u.vel.angle(), Tmp.v3.angle()) * 3f, 180f);
                 float acs = Math.max(Mathf.cos(adst), -0.15f);
