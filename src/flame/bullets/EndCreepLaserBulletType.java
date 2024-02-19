@@ -23,9 +23,9 @@ import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 
 public class EndCreepLaserBulletType extends ContinuousBulletType implements LaserRange{
-    float creepTime = 140f;
-    float baseLength = 300f;
-    float width = 12f;
+    public float creepTime = 140f;
+    public float baseLength = 300f;
+    public float width = 12f;
 
     Color[] colors = {FlamePal.red.cpy().a(0.5f), FlamePal.red, FlamePal.red.cpy().mul(2f), Color.white};
 
