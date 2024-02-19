@@ -145,7 +145,7 @@ public class DespondencyUnitType extends UnitType{
 
                     shootCone = 80f;
                     inaccuracy = 4f;
-                    reload = 9f;
+                    reload = 9/2f;
                     xRand = 4f;
                     shoot.shots = 9;
                     shoot.shotDelay=1;
