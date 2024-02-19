@@ -25,54 +25,54 @@ public class EmpathyUnit extends UnitEntity{
     int attackAIChanges = 0;
 
     boolean decoy = false;
-    private float decoyDelay, decoyTime;
+    public float decoyDelay, decoyTime;
 
-    private float trueHealth, trueMaxHealth;
-    private Team trueTeam;
+    public float trueHealth, trueMaxHealth;
+    public Team trueTeam;
 
-    private boolean queueParry = false;
-    private float parryHealth;
-    private float parryTime = 0f;
-    private final Seq<LaserBulletHolder> parryLasers = new Seq<>(false);
-    private float autoParryTime = 0f;
+    public boolean queueParry = false;
+    public float parryHealth;
+    public float parryTime = 0f;
+    public final Seq<LaserBulletHolder> parryLasers = new Seq<>(false);
+    public float autoParryTime = 0f;
 
-    private float tx, ty, trot, trueDrag;
-    private float ltrot;
-    private UnitController trueController;
-    private float trailX, trailY;
-    private final Vec2 trueVel = new Vec2();
-    private float invFrames;
+    public float tx, ty, trot, trueDrag;
+    public float ltrot;
+    public UnitController trueController;
+    public float trailX, trailY;
+    public final Vec2 trueVel = new Vec2();
+    public float invFrames;
 
-    private float stunTimer = 0f;
-    private float stunTimer2 = 0f;
-    private int stunCount = 0;
-    private boolean initialized;
+    public float stunTimer = 0f;
+    public float stunTimer2 = 0f;
+    public int stunCount = 0;
+    public boolean initialized;
 
-    private float moveDistances = 0f;
+    public float moveDistances = 0f;
 
-    private float chainTime;
-    private final Vec2 chainPos = new Vec2();
+    public float chainTime;
+    public final Vec2 chainPos = new Vec2();
 
-    private Teamc lastTarget;
-    private float battleTime;
+    public Teamc lastTarget;
+    public float battleTime;
 
-    private float damageTaken, maxDamageTaken, damageDelay;
+    public float damageTaken, maxDamageTaken, damageDelay;
 
     //priority, type(velocity, fixed), x, y
     //priority, rotation, speed
-    private final FloatSeq moves = new FloatSeq(), rotates = new FloatSeq();
+    public final FloatSeq moves = new FloatSeq(), rotates = new FloatSeq();
 
     protected int nearbyBullets = 0, nearbyUnits = 0, nearbyBuildings = 0;
     protected float nearestTarget = 99999f, nearestTotalHealth = 0f;
     float nearbyScan = 0f;
-    private final static float scanRange = 700f;
+    public final static float scanRange = 700f;
 
-    private static boolean parryHitSuccess = false;
-    private static Bullet strb = null;
-    private static float scr = 0f;
-    private final static WeightedRandom<EmpathyAI> randAI = new WeightedRandom<>();
-    private final static float chainLifetime = 17f;
-    private final static Rect scanRect = new Rect();
+    public static boolean parryHitSuccess = false;
+    public static Bullet strb = null;
+    public static float scr = 0f;
+    public final static WeightedRandom<EmpathyAI> randAI = new WeightedRandom<>();
+    public final static float chainLifetime = 17f;
+    public final static Rect scanRect = new Rect();
 
     @Override
     public boolean isBoss(){
