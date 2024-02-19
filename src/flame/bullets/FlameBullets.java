@@ -4,7 +4,7 @@ import arc.graphics.*;
 import mindustry.entities.bullet.*;
 
 public class FlameBullets{
-    public static BulletType smallLaser, sweep, aoe, bigLaser, sentryLaser, pin, tracker, sword, test;
+    public static BulletType smallLaser, sweep, aoe, bigLaser,blastlaser,blastlaser2, blastlaser3, blastlaser4,  sentryLaser, pin, tracker, sword, test;
 
     public static void load(){
         smallLaser = new ApathySmallLaserBulletType();
