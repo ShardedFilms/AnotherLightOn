@@ -41,7 +41,7 @@ public class BlastLaserBulletType extends BulletType{
 
     public boolean shockwave = false;
     public boolean flash = false;
-    public boolean fragment = false;
+    public boolean fragments = false;
 
     public BlastLaserBulletType(){
         speed = 0f;
