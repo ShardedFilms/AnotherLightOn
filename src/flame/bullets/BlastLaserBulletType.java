@@ -41,7 +41,6 @@ public class BlastLaserBulletType extends BulletType{
 
     public boolean shockwave = false;
     public boolean flash = false;
-    public boolean fragments = false;
 
     public BlastLaserBulletType(){
         speed = 0f;
@@ -104,9 +103,6 @@ public class BlastLaserBulletType extends BulletType{
             if(impact) Tmp.v3.setAngle(b.rotation() + (knockback < 0 ? 180f : 0f));
             if(trueDamage){
                 EmpathyDamage.damageUnit(u, damageEmpathy + u.maxHealth / 40f, true, () -> {
-                    //SpecialDeathEffects.get(e.type).deathUnit(e, unit.x, unit.y, Angles.angle(unit.x, unit.y, e.x, e.y));
-                    if(fragments){
-                    SpecialDeathEffects.get(u.type).deathUnit(u, x, y, rot);};
                 });
             };
             if(b.time < scaleDelay){
