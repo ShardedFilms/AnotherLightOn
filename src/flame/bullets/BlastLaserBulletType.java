@@ -9,6 +9,7 @@ import arc.util.*;
 import flame.*;
 import flame.effects.*;
 import flame.graphics.*;
+import flame.unit.empathy.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.entities.bullet.*;
@@ -32,9 +33,10 @@ public class BlastLaserBulletType extends BulletType{
 
     public TextureRegion hcircle;
 
-    public float ScaleDelay =140f;
+    public float ScaleDelay = 140;
 
-    public float damageEmpathy;
+    public float damageEmpathy= 10;
+    public boolean trueDamage = false;
 
     public BlastLaserBulletType(){
         speed = 0f;
@@ -95,9 +97,9 @@ public class BlastLaserBulletType extends BulletType{
             //Tmp.v3.set(u).sub(b).nor().scl((knockback + sss * 0.5f * d) * 80f);
             Tmp.v3.set(u).sub(b).nor().scl((knockback + sss / (2 * (1.3157894f))) * 80f);
             if(impact) Tmp.v3.setAngle(b.rotation() + (knockback < 0 ? 180f : 0f));
-
+            if(trueDamage){
             EmpathyDamage.damageUnit(u, damageEmpathy + u.maxHealth / 40f, true, null);
-
+            };
             if(b.time < scaleDelayf){
                 /*
                 float adst = Math.min(Angles.angleDist(u.vel.angle(), Tmp.v3.angle()) * 3f, 180f);
