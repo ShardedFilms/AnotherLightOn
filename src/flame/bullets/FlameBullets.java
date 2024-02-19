@@ -11,6 +11,10 @@ public class FlameBullets{
         sweep = new ApathySweepLaserBulletType();
         aoe = new ApathyAoEBulletType();
         bigLaser = new ApathyBigLaserBulletType();
+        blastlaser = new BlastLaserBulletType();
+                blastlaser2 = new BlastLaserBulletType();
+                blastlaser3 = new BlastLaserBulletType();
+                blastlaser4 = new BlastLaserBulletType();
 
         sentryLaser = new LaserBulletType(900f){{
             length = 1400f;
