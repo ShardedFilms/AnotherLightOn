@@ -20,17 +20,17 @@ import mindustry.graphics.*;
 import mindustry.world.blocks.defense.turrets.Turret.*;
 
 public class ApathyBigLaserBulletType extends BulletType{
-    float width = 180f;
-    float length = 2500f;
+    public float width = 180f;
+    public float length = 2500f;
     //1900
     //float length = 600f;
 
-    float end = 340f;
-    Interp dwidth = Interp.circleOut;
-    Color[] colors = {FlamePal.primary.cpy().a(0.4f), FlamePal.primary, Color.white};
-    float[] widths = {1.5f, 1f, 0.8f};
+    public float end = 340f;
+    public Interp dwidth = Interp.circleOut;
+    public Color[] colors = {FlamePal.primary.cpy().a(0.4f), FlamePal.primary, Color.white};
+    public float[] widths = {1.5f, 1f, 0.8f};
 
-    TextureRegion hcircle;
+    public TextureRegion hcircle;
 
     public ApathyBigLaserBulletType(){
         speed = 0f;
