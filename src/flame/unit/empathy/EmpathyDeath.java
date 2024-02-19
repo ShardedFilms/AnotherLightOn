@@ -122,6 +122,6 @@ public class EmpathyDeath{
 
         Draw.z(lz);
         if(time == duration){
-        FlameSounds.expDecoy.play(5f,1f,false);}
+        FlameSounds.expDecoy.play(5f,1f,1);}
     }
 }
