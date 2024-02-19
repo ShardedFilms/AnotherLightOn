@@ -60,7 +60,7 @@ public class EndLauncherWeapon extends Weapon{
 
         if(mount.shoot && lm.burstCount <= 0 && can && mount.warmup > minWarmup && mount.reload <= 0.0001f){
             mount.reload = reload;
-            lm.burstCount = 8 * 10;
+            lm.burstCount = 8 * 3;
             lm.burstTime = 0f;
         }
 
@@ -69,7 +69,7 @@ public class EndLauncherWeapon extends Weapon{
 
             if(lm.burstTime <= 0f){
                 int mc = targets.length / 3;
-                int hs = mount.totalShots / 2;
+                int hs = mount.totalShots / 4;
                 boolean flip = mount.totalShots % 2 == 1;
                 Vec3 pos = getShootPosition(unit, mount, hs % mc, flip);
 
