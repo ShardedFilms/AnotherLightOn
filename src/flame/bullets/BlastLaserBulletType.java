@@ -36,7 +36,7 @@ public class BlastLaserBulletType extends BulletType{
 
     public float damageEmpathy;
 
-    public ApathyBigLaserBulletType(){
+    public BlastLaserBulletType(){
         speed = 0f;
         collides = collidesTiles = false;
         absorbable = false;
