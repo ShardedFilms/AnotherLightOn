@@ -17,7 +17,7 @@ public class EmpathyDeath{
     float time = 0f;
     float x, y, rotation;
 
-    static float duration = 5f * 60;
+    static float duration = 10f * 60;
     static float[] speeds = {1f, -0.75f, 0.5f};
 
     void update(){
@@ -121,5 +121,7 @@ public class EmpathyDeath{
         Draw.mixcol();
 
         Draw.z(lz);
+        if(time == duration){
+        FlameSounds.expDecoy.play(5f,1f,false);}
     }
 }
