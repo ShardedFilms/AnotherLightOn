@@ -254,7 +254,7 @@ public class BlastLaserBulletType extends BulletType{
             Lines.lineAngle(v.x, v.y, b.rotation(), length - end, false);
             Drawf.tri(v2.x, v2.y, Lines.getStroke(), width * 2 + dw, b.rotation());
         }
-        if(b.time > scaleDelayf){
+        if(b.time > scaleDelay){
             float scl = Interp.pow2Out.apply(Mathf.clamp((b.time - 140f) / 5)) * Interp.pow3In.apply(Mathf.clamp((lifetime - b.time) / 80f));
             Rand r = Utils.rand, r2 = Utils.rand2;
             r.setSeed(b.id + 1236);
