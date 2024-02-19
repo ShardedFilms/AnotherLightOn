@@ -16,7 +16,7 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 
 public class EndRailBulletType extends BulletType{
-    float length = 2400f;
+    public float length = 2400f;
     Effect pointEffect = new Effect(15f, e -> {
         Rand r = Utils.rand;
         r.setSeed(e.id);
