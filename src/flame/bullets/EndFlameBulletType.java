@@ -20,7 +20,7 @@ public class EndFlameBulletType extends BulletType{
     static final Color tc = new Color(), tc2 = new Color();
 
     public EndFlameBulletType(){
-        super(12f, 30f);
+        super(12f, 450f);
         pierce = pierceBuilding = true;
         pierceCap = -1;
         lifetime = 60f;
@@ -28,7 +28,7 @@ public class EndFlameBulletType extends BulletType{
         status = StatusEffects.melting;
         statusDuration = 60f * 15f;
         hitSize = 14f;
-        collidesAir = false;
+        collidesAir = true;
         keepVelocity = false;
         hittable = reflectable = absorbable = false;
 
