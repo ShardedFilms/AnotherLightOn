@@ -18,6 +18,9 @@ import mindustry.graphics.*;
 import mindustry.world.blocks.defense.*;
 
 public class EndNukeBulletType extends BasicBulletType{
+public float damageEmpathy = 256000; 
+public float blastRadius = 480;
+    public float forcePush = 15;
     public EndNukeBulletType(){
         super(17f, 50000f, "missile-large");
         backColor = trailColor = hitColor = FlamePal.red;
@@ -56,7 +59,7 @@ public class EndNukeBulletType extends BasicBulletType{
         Core.audio.protect(sid2, true);
 
         float[] arr = new float[360 * 3];
-        Utils.rayCastCircle(b.x, b.y, 480f, t -> (t.block().isStatic() || t.block() instanceof Wall) && !Mathf.within(b.x, b.y, t.worldx(), t.worldy(), 150f), t -> {
+        Utils.rayCastCircle(b.x, b.y, blastRadius, t -> (t.block().isStatic() || t.block() instanceof Wall) && !Mathf.within(b.x, b.y, t.worldx(), t.worldy(), 150f), t -> {
             float dst = 1f - Mathf.clamp(Mathf.dst(bx, by, t.x * Vars.tilesize, t.y * Vars.tilesize) / 480f);
             if(Mathf.chance(Mathf.pow(dst, 2f) * 0.75f)) Fires.create(t);
         }, t -> {
@@ -113,7 +116,7 @@ public class EndNukeBulletType extends BasicBulletType{
             });
         }, arr);
 
-        Utils.scanEnemies(b.team, b.x, b.y, 480f, true, true, t -> {
+        Utils.scanEnemies(b.team, b.x, b.y, blastRadius, true, true, t -> {
             if(t instanceof Unit u){
                 //float damageScl = 1f;
                 //if(u.isGrounded()) damageScl = Utils.inRayCastCircle(bx, by, arr, u);
@@ -123,7 +126,8 @@ public class EndNukeBulletType extends BasicBulletType{
                     Tmp.v2.trns(Angles.angle(bx, by, u.x, u.y), (16f + 5f / u.mass()) * damageScl);
                     u.vel.add(Tmp.v2);
 
-                    EmpathyDamage.damageUnit(u, (u.maxHealth / 10f + 10000f) * damageScl, true, () -> {
+                    //EmpathyDamage.damageUnit(u, (u.maxHealth / 10f + 10000f) * damageScl, true, () -> {
+                        EmpathyDamage.damageUnit(u, damageEmpathy * damageScl, true, () -> {
                         FlameOut.vaporBatch.discon = null;
                         FlameOut.vaporBatch.switchBatch(u::draw, null, (d, w) -> {
                             float with = Utils.inRayCastCircle(bx, by, arr, d);
@@ -208,7 +212,7 @@ public class EndNukeBulletType extends BasicBulletType{
                             //float force = Mathf.clamp(1f - (len / (range + bl.hitSize() / 2f + 8f)));
                             float force = 1f / (1f + (len - 150f) / 500f);
 
-                            Vec2 v = Utils.vv.set(dx, dy).nor().setLength(force * 15f);
+                            Vec2 v = Utils.vv.set(dx, dy).nor().setLength(force * forcePush);
                             if(!v.isNaN()){
                                 dev.vx = v.x;
                                 dev.vy = v.y;
@@ -217,14 +221,14 @@ public class EndNukeBulletType extends BasicBulletType{
                         });
                     };
 
-                    EmpathyDamage.damageBuildingRaw(bl, (bl.maxHealth / 10f + 10000f) * damageScl, true, death);
+                    EmpathyDamage.damageBuildingRaw(bl, (bl.maxHealth / 10f + 1000000f) * damageScl, true, death);
                 }
             }
         });
 
         Effect.shake(60f, 120f, b.x, b.y);
-        FlameFX.desNukeShockwave.at(b.x, b.y, 480f);
-        FlameFX.desNuke.at(b.x, b.y, 479f, arr);
+        FlameFX.desNukeShockwave.at(b.x, b.y, blastRadius);
+        FlameFX.desNuke.at(b.x, b.y, blastRadius*0.99f, arr);
 
         FlameOutSFX.inst.impactFrames(bx, by, b.rotation(), 23f, false, () -> {
             for(int i = 0; i < arr.length; i++){
