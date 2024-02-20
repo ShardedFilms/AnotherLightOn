@@ -118,7 +118,7 @@ public class EndRailBulletType extends BulletType{
                 Tmp.v2.trns(b.rotation(), 6f + 5f / u.mass());
                 u.vel.add(Tmp.v2);
 
-                EmpathyDamage.damageUnit(u, damageEmppathy + u.maxHealth / 40f, true, () -> {
+                EmpathyDamage.damageUnit(u, damageEmpathy + u.maxHealth / 40f, true, () -> {
                     //SpecialDeathEffects.get(e.type).deathUnit(e, unit.x, unit.y, Angles.angle(unit.x, unit.y, e.x, e.y));
                     SpecialDeathEffects.get(u.type).deathUnit(u, x, y, rot);
                 });
