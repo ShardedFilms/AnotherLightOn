@@ -26,8 +26,9 @@ public class EndCreepLaserBulletType extends ContinuousBulletType implements Las
     public float creepTime = 140f;
     public float baseLength = 300f;
     public float width = 12f;
+    public float damageEmpathy = 400f;
 
-    Color[] colors = {FlamePal.red.cpy().a(0.5f), FlamePal.red, FlamePal.red.cpy().mul(2f), Color.white};
+    public Color[] colors = {FlamePal.red.cpy().a(0.5f), FlamePal.red, FlamePal.red.cpy().mul(2f), Color.white};
 
     static Seq<Building> buildings = new Seq<>();
 
@@ -195,7 +196,7 @@ public class EndCreepLaserBulletType extends ContinuousBulletType implements Las
                 } : null);
 
                 if(dam > 0){
-                    EmpathyDamage.damageUnit(u, (damage + u.maxHealth / 390f) * dam, true, death);
+                    EmpathyDamage.damageUnit(u, damageEmpathy * dam, true, death);
                     hitt = true;
                     if(u.isGrounded()) groundHit = true;
                 }
