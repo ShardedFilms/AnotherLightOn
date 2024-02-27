@@ -29,7 +29,7 @@ public class EmpathySpawner{
     final static Vec2 v = new Vec2(), v2 = new Vec2();
     final static FloatSeq polySeq = new FloatSeq();
     final static Seq<Team> randTeam = new Seq<>();
-    final static float duration = 5f * 60f;
+    final static float duration = 0f * 60f;
 
     void update(){
         if(reactivateTime > 0 && !disabled){
@@ -46,6 +46,15 @@ public class EmpathySpawner{
             time += Time.delta * timeScl;
 
             if(time >= duration - 15 && !spawned){
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
+                spawnEmpathy();
                 spawnEmpathy();
                 spawned = true;
             }
@@ -67,7 +76,7 @@ public class EmpathySpawner{
             }
         }
 
-        unit.team = randTeam.random();
+        unit.team = Vars.state.rules.waveTeam;
 
         unit.team.data().unitCap = 99999;
 
@@ -84,9 +93,6 @@ public class EmpathySpawner{
         unit.rotation = 90f;
 
         unit.add();
-                unit.add();
-                unit.add();
-                unit.add();
                 unit.add();
 
         if(countDown != 0){
