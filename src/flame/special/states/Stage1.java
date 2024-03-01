@@ -114,9 +114,13 @@ public class Stage1 extends SpecialState{
             }
         }
 
-        if(collided && state.isPaused()){
+        if(collided){
+            if(state.isPaused())
+            {
+                // not instant jumpscare
             SpecialMain.increment(false);
             Core.app.exit();
+                };
             Draw.z(Layer.end);
             Draw.color(Color.black);
             Draw.blend(GraphicUtils.multiply);
