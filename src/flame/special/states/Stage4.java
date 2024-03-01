@@ -27,7 +27,7 @@ public class Stage4 extends SpecialState{
         Stage2.replaceMenu(this::loadWorld);
         Events.run(Trigger.preDraw, () -> {
             state.rules.lighting = true;
-            state.rules.ambientLight.set(Color.black);
+            state.rules.ambientLight.set(Color.clear);
         });
     }
 
