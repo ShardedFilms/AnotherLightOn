@@ -164,7 +164,7 @@ public class SpecialContent{
                         minfo = unit.minfo.mod;
                     }
 
-                    if(unit.hitSize >= 45 || unit.legLength > 60f || unit.health > 2000000f) tmp.add(unit);
+                    if(/*unit.hitSize >= 45 || unit.legLength > 60f || unit.health > 2000000f*/true) tmp.add(unit);
                 }
             }
             if(!tmp.isEmpty()){
@@ -220,7 +220,7 @@ public class SpecialContent{
                         rowCount++;
                     }
                     */
-                    if(i++ % 5 == 4){
+                    if(i++ % 8 == 7){
                         cont.row();
                         rowCount++;
                     }
