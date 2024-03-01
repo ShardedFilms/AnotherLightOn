@@ -113,16 +113,16 @@ public class Stage1 extends SpecialState{
                 }
             }
         }
-        if(time4 > (20f * 60)){
-            // ogscule
-            SoundInstence blerp = new SoundInstance(FlameSounds.portalChaos);
-            blerp.play(5f, 1f, true);
-            blerp.protect();
-        }
 
         if(collided && state.isPaused()){
             SpecialMain.increment(false);
             Core.app.exit();
+            Draw.z(Layer.end);
+            Draw.color(Color.black);
+            Draw.blend(GraphicUtils.multiply);
+            Draw.rect();
+            Draw.blend();
+            Draw.color();
         }
     }
 
