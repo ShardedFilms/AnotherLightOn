@@ -113,8 +113,14 @@ public class Stage1 extends SpecialState{
                 }
             }
         }
+        if(time4 > (20f * 60)){
+            // ogscule
+            SoundInstence blerp = new SoundInstance(FlameSounds.portalChaos);
+            blerp.play(5f, 1f, true);
+            blerp.protect();
+        }
 
-        if(collided){
+        if(collided && state.isPaused()){
             SpecialMain.increment(false);
             Core.app.exit();
         }
@@ -123,8 +129,6 @@ public class Stage1 extends SpecialState{
     static void updateSilence(){
         if(!state.isMenu() && state.isPaused()){
             state.set(State.playing);
-            SpecialMain.increment(false);
-            Core.app.exit();
         }
 
         if(!silence && Vars.control.sound != null){
