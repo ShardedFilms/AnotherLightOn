@@ -156,12 +156,12 @@ public class Stage2 extends SpecialState{
                         killTime = 120f;
                         tile.setBlock(Blocks.air);
                         if(!incremented){
-                            Seq<LoadedMod> mods = Vars.mods.list();
+                            /*Seq<LoadedMod> mods = Vars.mods.list();
                             for(LoadedMod m : mods){
                                 if(!m.name.equals("flameout")){
                                     Core.settings.put("mod-" + m.name + "-enabled", false);
                                 }
-                            }
+                            }*/
 
                             SpecialMain.increment(false);
                             incremented = true;
@@ -409,7 +409,7 @@ public class Stage2 extends SpecialState{
         }
     }
 
-    static void rebuildDesktop(){
+    /*static void rebuildDesktop(){
         if(container == null) return;
         
         container.clear();
@@ -438,7 +438,7 @@ public class Stage2 extends SpecialState{
             t.defaults().width(width).height(70f);
             t.visible(() -> !t.getChildren().isEmpty());
         }).width(width).growY();
-    }
+    }*/
 
     static void buttonBasic(Table t, String name, Drawable icon, Runnable clicked){
         t.button(name, icon, Styles.flatToggleMenut, clicked).marginLeft(11f).get();
@@ -730,7 +730,7 @@ public class Stage2 extends SpecialState{
         }
     }
 
-    static class AltPausedDialog extends PausedDialog{
+    /*static class AltPausedDialog extends PausedDialog{
         AltPausedDialog(){
             super();
 
@@ -745,5 +745,5 @@ public class Stage2 extends SpecialState{
             cont.defaults().size(130f).pad(5);
             cont.buttonRow("@back", Icon.play, this::hide);
         }
-    }
+    }*/
 }
