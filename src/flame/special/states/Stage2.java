@@ -76,7 +76,7 @@ public class Stage2 extends SpecialState{
         updateSilence();
         if(killed && killTime <= 0f){
             crashTime += FlameOutSFX.timeDelta;
-            if(crashTime >= 10f * 60){
+            if(crashTime >= 10f * 60 && state.isPaused()){
                 //SpecialMain.increment(false);
                 Core.app.exit();
                 return;
