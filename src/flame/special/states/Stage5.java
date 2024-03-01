@@ -40,7 +40,7 @@ public class Stage5 extends SpecialState{
 
     static int timeOffset = 0;
     static int drawIdx = 0;
-    static int[] times = {6 * 60, 3 * 60, 10 * 60, 3 * 60, 15 * 60, 4 * 60, 17 * 60, 28 * 60, 10};
+    static int[] times = {6 * 60, 3 * 60, 10 * 60, 3 * 60, 15 * 60, 4 * 60, 17 * 60, 28 * 60, 20};
 
     @Override
     public void loadClient(){
