@@ -26,7 +26,6 @@ public class SpecialContent{
     public static void load(){
         if(SpecialMain.main == null) return;
 
-        if(SpecialMain.getStage() == 2){
             spawner = new Block("unitspawn"){{
                 health = 100000;
                 size = 1;
@@ -35,9 +34,8 @@ public class SpecialContent{
 
                 destructible = true;
                 configurable = true;
-
-                buildVisibility = BuildVisibility.hidden;
-                //buildVisibility = BuildVisibility.sandboxOnly;
+                
+                buildVisibility = BuildVisibility.sandboxOnly
                 category = Category.effect;
 
                 buildType = SpawnerBuilding::new;
@@ -55,7 +53,7 @@ public class SpecialContent{
                     return false;
                 }
             };
-        }
+        
 
         if(SpecialMain.getStage() == 0)
         y = new UnitType(""){
