@@ -29,7 +29,7 @@ public class SpecialContent{
             spawner = new Block("unitspawn"){{
                 health = 100000;
                 size = 1;
-                breakable = false;
+                breakable = true;
                 solid = false;
 
                 destructible = true;
