@@ -398,14 +398,12 @@ public class Stage2 extends SpecialState{
     static void replaceMenu(Runnable run){
         clickedLoader = run;
         new AltMenuFragment();
-        new AltPausedDialog();
         rebuild();
         Events.on(ResizeEvent.class, e -> rebuild());
     }
 
     static void rebuild(){
         if(container != null){
-            rebuildDesktop();
         }
     }
 
