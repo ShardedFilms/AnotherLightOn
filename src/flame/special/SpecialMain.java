@@ -18,7 +18,7 @@ public class SpecialMain{
     static Texture main;
     static SpecialState activeState;
 
-    private static int state = 0;
+    public static int state = 0;
 
     public static void draw(){
         if(activeState != null){
