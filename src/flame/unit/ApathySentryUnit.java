@@ -11,11 +11,11 @@ import mindustry.graphics.*;
 import mindustry.type.*;
 
 public class ApathySentryUnit extends UnitEntity{
-    float moveX, moveY, moveTime;
-    Teamc target;
-    float reload = 0f;
-    boolean active;
-    ApathyIUnit owner;
+    public float moveX, moveY, moveTime;
+    public Teamc target;
+    public float reload = 0f;
+    public boolean active;
+    public ApathyIUnit owner;
 
     float healDelay = 0f;
     float healFade = 0f;
