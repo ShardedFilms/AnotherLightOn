@@ -58,10 +58,6 @@ public class EmpathyUnitType extends UnitType{
 
     @Override
     public void update(Unit unit){
-        if(!(unit instanceof EmpathyUnit)){
-            unit.destroy();
-            return;
-        }
         super.update(unit);
     }
 }
