@@ -7,9 +7,9 @@ import mindustry.gen.*;
 import mindustry.type.*;
 
 public class DespondencyUnit extends LegsUnit{
-    float trueHealth, trueMaxHealth;
-    float invFrames;
-    float lastDamage = 0f;
+    public float trueHealth, trueMaxHealth;
+    public float invFrames;
+    public float lastDamage = 0f;
 
     @Override
     public void update(){
