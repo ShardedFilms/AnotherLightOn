@@ -153,6 +153,6 @@ public class SpecialContent{
             pane.setOverscroll(false, false);
             table.add(pane).maxHeight(40 * 5);
             //table.top().add(table);
-        }
-    }
+        };
+    };
 }
