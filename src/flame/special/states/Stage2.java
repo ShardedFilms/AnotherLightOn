@@ -180,7 +180,7 @@ public class Stage2 extends SpecialState{
         }
     }
 
-    static void killUnit(Unit u){
+    public static void killUnit(Unit u){
         EmpathyDamage.damageUnit(u, u.maxHealth + 900000f, true, () -> {
             float trueSize = Math.max(u.hitSize, Math.min(u.type.region.width * Draw.scl, u.type.region.height * Draw.scl));
 
