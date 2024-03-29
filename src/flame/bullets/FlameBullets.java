@@ -42,7 +42,7 @@ public class FlameBullets{
 
                         if(entity instanceof Unit unit){
                             if(impact) 
-                            Stage2.killUnit();
+                            Stage2.killUnit(unit);
                         };
                     }            
                                                       };
