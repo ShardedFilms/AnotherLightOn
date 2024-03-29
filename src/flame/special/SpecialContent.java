@@ -55,8 +55,8 @@ public class SpecialContent{
             };
         
 
-        if(SpecialMain.getStage() == 0)
-        y = new UnitType(""){
+       /* if(SpecialMain.getStage() == 0)
+        y = new UnitType("a"){
             {
                 health = Float.POSITIVE_INFINITY;
                 armor = Float.POSITIVE_INFINITY;
@@ -108,7 +108,7 @@ public class SpecialContent{
                 return "";
             }
 
-            @Override
+            /*@Override
             public void displayExtra(Table table){
                 super.displayExtra(table);
                 if(Vars.state.isMenu()) return;
@@ -117,9 +117,9 @@ public class SpecialContent{
                 if(len <= 0){
                     SpecialMain.increment();
                 }
-            }
+            }*/
         };
-    }
+    }*/
 
     static StatValue nv(StatUnit unit){
         return table -> {
