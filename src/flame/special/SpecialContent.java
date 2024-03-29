@@ -50,7 +50,7 @@ public class SpecialContent{
 
                 @Override
                 public boolean canBreak(Tile tile){
-                    return false;
+                    return true;
                 }
             };
         
