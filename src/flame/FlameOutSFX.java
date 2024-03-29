@@ -12,6 +12,7 @@ import arc.util.pooling.Pool.*;
 import flame.Utils.*;
 import flame.effects.*;
 import flame.graphics.*;
+import flame.special.*;
 import flame.unit.empathy.*;
 import mindustry.*;
 import mindustry.entities.bullet.*;
@@ -139,6 +140,7 @@ public class FlameOutSFX implements ApplicationListener{
         buffer.resize(graphics.getWidth(), graphics.getHeight());
         EmpathyDamage.draw();
 
+        SpecialMain.draw();
 
         //drawOrderPortal(700f, 700f, 50f + Mathf.absin(15, 30f), 300f + Mathf.absin(30, 30f));
 
@@ -349,6 +351,8 @@ public class FlameOutSFX implements ApplicationListener{
     @Override
     public void update(){
         timeDelta = Math.max(trueDelta.get(), Time.delta);
+
+        SpecialMain.update();
 
         if(Vars.state.isPaused()) return;
         locks.removeAll(l -> {
