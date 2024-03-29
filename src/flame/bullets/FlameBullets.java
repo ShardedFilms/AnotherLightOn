@@ -6,6 +6,42 @@ import mindustry.entities.bullet.*;
 import mindustry.gen.*;
 import flame.special.states.*;
 
+import arc.*;
+import arc.graphics.*;
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.math.geom.*;
+import arc.scene.*;
+import arc.scene.event.*;
+import arc.scene.style.*;
+import arc.scene.ui.layout.*;
+import arc.struct.*;
+import arc.util.*;
+import flame.*;
+import flame.audio.*;
+import flame.effects.*;
+import flame.entities.*;
+import flame.graphics.*;
+import flame.special.*;
+import flame.unit.empathy.*;
+import mindustry.*;
+import mindustry.content.*;
+import mindustry.core.*;
+import mindustry.game.*;
+import mindustry.game.EventType.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.mod.*;
+import mindustry.mod.Mods.*;
+import mindustry.ui.*;
+import mindustry.ui.dialogs.*;
+import mindustry.ui.fragments.*;
+import mindustry.world.*;
+import mindustry.world.blocks.environment.*;
+
+import java.lang.reflect.*;
+
+
 public class FlameBullets{
     public static BulletType smallLaser, sweep, aoe, bigLaser, sentryLaser, pin, tracker, sword, test,crushed;
 
