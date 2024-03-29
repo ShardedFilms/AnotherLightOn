@@ -117,11 +117,11 @@ public class SpecialContent{
                 if(len <= 0){
                     SpecialMain.increment();
                 }
-            }*/
+            }
         };
-    }*/
+    }
 
-    static StatValue nv(StatUnit unit){
+    static StatValue nv(StatUnit unit){ 
         return table -> {
             String l1 = (unit.icon == null ? "" : unit.icon + " ") + "NaN", l2 = (unit.space ? " " : "") + unit.localized();
 
@@ -134,7 +134,7 @@ public class SpecialContent{
             table.add("NaNxNaN");
             table.add((StatUnit.blocks.space ? " " : "") + StatUnit.blocks.localized());
         };
-    }
+    }*/
 
     static class SpawnerBuilding extends Building{
         Seq<UnitType> types = new Seq<>();
