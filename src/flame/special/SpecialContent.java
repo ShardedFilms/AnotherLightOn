@@ -55,7 +55,7 @@ public class SpecialContent{
             };
         
 
-    static class SpawnerBuilding extends Building{
+    class SpawnerBuilding extends Building{
         Seq<UnitType> types = new Seq<>();
         static Seq<UnitType> tmp = new Seq<>();
         static int rowCount;
