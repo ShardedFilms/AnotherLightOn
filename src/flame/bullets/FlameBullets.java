@@ -1,6 +1,7 @@
 package flame.bullets;
 
 import arc.graphics.*;
+import mindustry.content.*;
 import mindustry.entities.bullet.*;
 import mindustry.gen.*;
 import flame.special.states.*;
@@ -41,7 +42,7 @@ public class FlameBullets{
 
                         if(entity instanceof Unit unit){
                             if(impact) 
-                            Stage2.killUnit(u);
+                            Stage2.killUnit();
                         };
                     }            
                                                       };
