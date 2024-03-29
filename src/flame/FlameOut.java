@@ -91,7 +91,6 @@ public class FlameOut extends Mod{
         SpecialDeathEffects.load();
         FlameBullets.load();
         FlameUnitTypes.load();
-        SpecialContent.load();
     }
 
 }
