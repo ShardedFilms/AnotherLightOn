@@ -4,7 +4,7 @@ import arc.graphics.*;
 import mindustry.entities.bullet.*;
 
 public class FlameBullets{
-    public static BulletType smallLaser, sweep, aoe, bigLaser, sentryLaser, pin, tracker, sword, test;
+    public static BulletType smallLaser, sweep, aoe, bigLaser, sentryLaser, pin, tracker, sword, test,crushed;
 
     public static void load(){
         smallLaser = new ApathySmallLaserBulletType();
@@ -23,5 +23,25 @@ public class FlameBullets{
         sword = new EmpathySwordBulletType();
 
         test = new TestBulletType();
+                        crushed = new RailBulletType(){{
+                    shootEffect = Fx.railShoot;
+                    length = 2400;
+                    pointEffectSpace = 60f;
+                    pierceEffect = Fx.railHit;
+                    pointEffect = Fx.railTrail;
+                    hitEffect = Fx.massiveExplosion;
+                    smokeEffect = Fx.shootBig2;
+                    damage = 1250;
+                    pierceDamageFactor = 0.5f;
+                }
+                    public void hitEntity(Bullet b, Hitboxc entity, float health) {
+                        super.hitEntity(b,entity,health);
+
+                        if(entity instanceof Unit unit){
+                            if(impact) 
+                            Stage2.killUnit(u);
+                        };
+                    }            
+                                                      };
     }
 }
