@@ -134,11 +134,11 @@ public class SpecialMain{
 
     static void loadState(){
         switch(state){
-            //case 1 -> activeState = new Stage1();
-            //case 2 -> activeState = new Stage2();
-            //case 3 -> activeState = new Stage4();
-            //case 4 -> activeState = new Stage3();
-            //case 5 -> activeState = new Stage5();
+            case 1 -> activeState = new Stage1();
+            case 2 -> activeState = new Stage2();
+            case 3 -> activeState = new Stage4();
+            case 4 -> activeState = new Stage3();
+            case 5 -> activeState = new Stage5();
         }
 
         if(activeState != null){
