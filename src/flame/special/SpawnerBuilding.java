@@ -119,5 +119,5 @@ public class SpawnerBuilding extends Building{
             //table.top().add(table);
         };
     };
-    }
-}
+    
+
