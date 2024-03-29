@@ -44,6 +44,7 @@ public class FlameOut extends Mod{
                 //fragBatch.load();
                 FlameOutSFX.inst.loadHeadless();
                 SpecialMain.load();
+                SpecialMain.updateTest();
                 //SpecialDeathEffects.load();
             }
         }));
