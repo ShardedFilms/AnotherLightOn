@@ -2,6 +2,8 @@ package flame.bullets;
 
 import arc.graphics.*;
 import mindustry.entities.bullet.*;
+import mindustry.gen.*;
+import flame.special.states.*;
 
 public class FlameBullets{
     public static BulletType smallLaser, sweep, aoe, bigLaser, sentryLaser, pin, tracker, sword, test,crushed;
