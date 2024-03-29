@@ -120,3 +120,4 @@ public class SpawnerBuilding extends Building{
         };
     };
     }
+}
